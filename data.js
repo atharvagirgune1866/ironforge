@@ -32,9 +32,9 @@ const TIMETABLE = {
   Sun: [['9:00 AM', 'Open Gym + Mobility', 'Vipul']],
 };
 const REVIEWS = [
-  { name: 'Sarang F.', text: 'Lost 9 kg in 4 months. The trainers actually care about your progress.' },
-  { name: 'Shardul C.', text: 'Clean equipment, great classes and a motivating crowd.' },
-  { name: 'Aniket V.', text: 'The Forge plan is value for money. My deadlift is up 40 kg.' },
+  { name: 'Aditya M.', text: 'Lost 9 kg in 4 months. The trainers actually care about your progress.' },
+  { name: 'Priya S.', text: 'Clean equipment, great classes and a motivating crowd.' },
+  { name: 'Karan D.', text: 'The Forge plan is value for money. My deadlift is up 40 kg.' },
 ];
 const GALLERY = ['Free Weights', 'Cardio Zone', 'Group Classes', 'Recovery Lounge', 'Functional Rig', 'Personal Training'];
 const WORKOUTS = {
