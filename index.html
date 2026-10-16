@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IRONFORGE | Premium Gym</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="#">IRON<span>FORGE</span></a>
+  <nav><a href="#programs">Programs</a><a href="#plans">Plans</a><a href="#trainers">Trainers</a><a href="#contact">Contact</a><a href="admin.html">Staff</a></nav>
+</header>
+<div class="hero">
+  <h1>FORGE YOUR <em>STRONGEST</em> SELF</h1>
+  <p>Premium equipment, expert coaches and programs built for real results. Book your free orientation today.</p>
+  <a class="btn" href="#contact">Book Free Orientation</a>
+</div>
+<section id="programs"><h2>Programs</h2><div class="grid" id="programList"></div></section>
+<section id="plans"><h2>Membership Plans</h2><div class="grid" id="planList"></div></section>
+<section id="trainers"><h2>Our Trainers</h2><div class="grid" id="trainerList"></div></section>
+<section id="contact">
+  <h2>Free Orientation</h2>
+  <form id="enquiryForm" novalidate>
+    <label for="name">Full name</label><input id="name" required>
+    <label for="email">Email</label><input id="email" type="email" required>
+    <label for="phone">Phone</label><input id="phone" required>
+    <label for="plan">Interested plan</label><select id="plan"><option value="">Not sure yet</option></select>
+    <label for="message">Message (optional)</label><textarea id="message" rows="3" maxlength="500"></textarea>
+    <button type="submit">Request Orientation</button>
+    <div id="formMsg" class="msg hidden"></div>
+  </form>
+</section>
+<footer>&copy; 2026 IRONFORGE &middot; Mini-project</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

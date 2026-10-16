@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IRONFORGE Admin (Demo)</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><a class="logo" href="index.html">IRON<span>FORGE</span> Admin</a><button class="ghost hidden" id="logout">Logout</button></header>
+<div class="wrap" id="loginBox">
+  <h2>Staff Login (demo)</h2>
+  <form id="loginForm">
+    <label for="password">Password</label><input id="password" type="password" required>
+    <button type="submit">Sign in</button>
+    <div id="loginMsg" class="msg err hidden">Wrong password</div>
+  </form>
+</div>
+<div class="wrap hidden" id="dash">
+  <div class="grid" id="stats"></div>
+  <div class="row"><input id="search" placeholder="Search name, email, phone, ID"><select id="statusFilter"><option value="">All statuses</option></select><button class="ghost" id="clear">Delete all</button></div>
+  <p class="tag">Demo: enquiries are saved in this browser only.</p>
+  <div class="tablewrap"><table><thead><tr><th>ID</th><th>Name / Contact</th><th>Plan</th><th>Status</th><th>Notes</th></tr></thead><tbody id="rows"></tbody></table></div>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
