@@ -57,3 +57,11 @@ summary{cursor:pointer;font-weight:700}details[open]{border-color:var(--orange)}
 #toTop{position:fixed;left:18px;bottom:18px;width:42px;height:42px;border-radius:50%;padding:0;opacity:0;pointer-events:none;transition:.3s;z-index:9}#toTop.show{opacity:1;pointer-events:auto}
 @media(max-width:800px){.hero-in{grid-template-columns:1fr}.hero-art{max-width:240px}}
 @media (prefers-reduced-motion:reduce){.floaty,.spin,.marquee div{animation:none}}
+.ringsvg{width:190px;margin:8px auto;display:block}.rbg{fill:none;stroke:var(--line);stroke-width:8}
+.rfg{fill:none;stroke:var(--orange);stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset .25s linear;filter:drop-shadow(0 0 6px #ff5a1f88)}
+.ringsvg text{fill:var(--text);font-size:22px;font-weight:800}
+.card.day.rest{opacity:.6}.card.day li{margin:4px 0}
+.bar{height:8px;background:var(--line);border-radius:6px;overflow:hidden;margin:14px 0}.bar div{height:100%;width:0;background:var(--orange);transition:width .4s}
+.sdays,.sgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.sdays span{text-align:center;color:var(--muted);font-size:.75rem}
+.cell{padding:8px 0;background:transparent;border:1px solid var(--line);color:var(--text);font-size:.85rem}
+.cell.on{background:var(--orange);border-color:var(--orange)}.cell.today{outline:2px solid var(--orange)}.cell:disabled{opacity:.3;cursor:default}

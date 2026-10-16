@@ -23,13 +23,6 @@ $('bmiForm').addEventListener('submit', e => {
   o.textContent = `BMI ${bmi.toFixed(1)} (${cat}). Maintenance ~${Math.round(maint)} kcal/day, target ~${Math.round(target)} kcal/day, protein ~${protein} g/day.`;
 });
 
-// ----- workout planner -----
-Object.keys(WORKOUTS).forEach(g => { const o = el('option', '', g); o.value = g; $('pgoal').append(o); });
-$('planForm').addEventListener('submit', e => {
-  e.preventDefault(); $('planOut').replaceChildren();
-  WORKOUTS[$('pgoal').value].slice(0, +$('pdays').value).forEach((d, i) => $('planOut').append(el('li', '', 'Day ' + (i + 1) + ': ' + d)));
-});
-
 // ----- timetable -----
 function showDay(d) {
   document.querySelectorAll('#dayTabs button').forEach(b => b.classList.toggle('on', b.textContent === d));

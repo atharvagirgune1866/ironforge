@@ -12,7 +12,7 @@
 <div id="progress"></div>
 <header>
   <a class="logo" href="#">IRON<span>FORGE</span></a>
-  <nav><a href="#programs">Programs</a><a href="#plans">Plans</a><a href="#trainers">Trainers</a><a href="#contact">Contact</a><a href="#tools">Tools</a><a href="#timetable">Timetable</a><a href="admin.html">Staff</a><button class="ghost" id="themeBtn" type="button" style="margin-left:14px;padding:6px 12px">☀/☾</button></nav>
+  <nav><a href="#programs">Programs</a><a href="#plans">Plans</a><a href="#trainers">Trainers</a><a href="#contact">Contact</a><a href="#lab">Lab</a><a href="#tools">Tools</a><a href="#timetable">Timetable</a><a href="admin.html">Staff</a><button class="ghost" id="themeBtn" type="button" style="margin-left:14px;padding:6px 12px">☀/☾</button></nav>
 </header>
 <div class="hero">
   <div class="hero-in">
@@ -42,12 +42,36 @@
       <label for="act">Activity</label><select id="act"><option value="1.2">Sedentary</option><option value="1.375">Light (1-3 days/wk)</option><option value="1.55" selected>Moderate (3-5 days/wk)</option><option value="1.725">Very active</option></select>
       <label for="goal">Goal</label><select id="goal"><option value="-400">Lose fat</option><option value="0">Maintain</option><option value="300">Gain muscle</option></select>
       <button type="submit">Calculate</button><div id="bmiOut" class="msg ok hidden"></div></form>
-    <form class="card" id="planForm"><h3>Workout Planner</h3>
-      <label for="pgoal">Goal</label><select id="pgoal"></select>
-      <label for="pdays">Days per week</label><select id="pdays"><option>3</option><option>4</option><option selected>5</option><option>6</option></select>
-      <button type="submit">Build my plan</button><ol id="planOut"></ol></form>
   </div>
   <p class="tag">Estimates only. Not medical advice.</p>
+</section>
+<section id="lab" class="reveal"><h2>Training Lab</h2>
+  <form class="card" id="genForm"><h3>Workout Generator</h3>
+    <div class="grid">
+      <div><label for="gLevel">Experience</label><select id="gLevel"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+      <div><label for="gEquip">Equipment</label><select id="gEquip"><option value="bodyweight">Bodyweight only</option><option value="dumbbells">Dumbbells</option><option value="gym" selected>Full gym</option></select></div>
+      <div><label for="gGoal">Goal</label><select id="gGoal"></select></div>
+      <div><label for="gDays">Days per week</label><select id="gDays"><option>3</option><option>4</option><option selected>5</option><option>6</option></select></div>
+    </div>
+    <button type="submit">Generate my weekly plan</button>
+  </form>
+  <div class="grid" id="genOut" style="margin:20px 0"></div>
+  <p class="tag">Sample plan for general fitness. Ask our coaches before starting if you have an injury or medical condition.</p>
+  <div class="grid" style="margin-top:20px">
+    <div class="card" style="text-align:center"><h3>Workout Timer</h3>
+      <svg viewBox="0 0 120 120" class="ringsvg"><circle class="rbg" cx="60" cy="60" r="54"/><circle class="rfg" id="tRing" cx="60" cy="60" r="54" transform="rotate(-90 60 60)"/><text id="tTxt" x="60" y="68" text-anchor="middle">01:00</text></svg>
+      <div class="row" style="justify-content:center"><button type="button" id="tStart">Start</button><button type="button" class="ghost" id="tReset">Reset</button></div>
+      <div class="row" style="justify-content:center" id="tPresets"></div>
+      <div class="row" style="justify-content:center"><input id="tCustom" type="number" min="5" max="3600" placeholder="Custom seconds" style="max-width:150px"><button type="button" class="ghost" id="tSet">Set</button></div>
+    </div>
+    <div class="card"><h3>Iron Streak</h3>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);text-align:center;gap:8px">
+        <div class="stat"><b id="sCur">0</b><span>Day streak</span></div><div class="stat"><b id="sBest">0</b><span>Best</span></div><div class="stat"><b id="sWeek">0 / 4</b><span>This week</span></div></div>
+      <div class="bar"><div id="sBar"></div></div>
+      <div class="sdays" id="sDays"></div><div class="sgrid" id="sGrid"></div>
+      <p class="tag">Tap a day to mark it complete. Saved in this browser.</p><button type="button" class="ghost" id="sReset">Reset</button>
+    </div>
+  </div>
 </section>
 <section id="timetable" class="reveal"><h2>Class Timetable</h2><div class="tabs row" id="dayTabs"></div><div class="grid" id="dayClasses"></div></section>
 <section id="pricing" class="reveal"><h2>Membership Calculator</h2>
@@ -85,5 +109,6 @@
 <script src="details.js"></script>
 <script src="features.js"></script>
 <script src="polish.js"></script>
+<script src="extras.js"></script>
 </body>
 </html>
