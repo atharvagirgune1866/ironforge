@@ -12,7 +12,7 @@ PLANS.forEach(p => {
 });
 TRAINERS.forEach(t => { const c = el('div', 'card'); c.append(el('h3', '', t.name), el('span', 'tag', t.speciality), el('p', '', t.bio)); $('trainerList').append(c); });
 
-$('enquiryForm').addEventListener('submit', e => {
+$('enquiryForm').addEventListener('submit', async e => {
   e.preventDefault();
   const msg = $('formMsg'); msg.className = 'msg';
   const name = $('name').value.trim(), email = $('email').value.trim(), phone = $('phone').value.trim();
@@ -28,6 +28,12 @@ $('enquiryForm').addEventListener('submit', e => {
   const list = JSON.parse(localStorage.getItem('ironforge_enquiries') || '[]');
   list.unshift(enquiry);
   localStorage.setItem('ironforge_enquiries', JSON.stringify(list));
+  if (CONFIG.FORMSPREE_ID) {
+    try {
+      const r = await fetch('https://formspree.io/f/' + CONFIG.FORMSPREE_ID, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(enquiry) });
+      if (!r.ok) throw new Error();
+    } catch { msg.classList.add('err'); msg.textContent = 'Saved here, but email sending failed. Please WhatsApp us.'; e.target.reset(); return; }
+  }
   msg.classList.add('ok'); msg.textContent = 'Thank you! Your enquiry ID is ' + enquiry.id + '. We will contact you soon.';
   e.target.reset();
 });

@@ -8,17 +8,43 @@
 <body>
 <header>
   <a class="logo" href="#">IRON<span>FORGE</span></a>
-  <nav><a href="#programs">Programs</a><a href="#plans">Plans</a><a href="#trainers">Trainers</a><a href="#contact">Contact</a><a href="admin.html">Staff</a></nav>
+  <nav><a href="#programs">Programs</a><a href="#plans">Plans</a><a href="#trainers">Trainers</a><a href="#contact">Contact</a><a href="#tools">Tools</a><a href="#timetable">Timetable</a><a href="admin.html">Staff</a><button class="ghost" id="themeBtn" type="button" style="margin-left:14px;padding:6px 12px">☀/☾</button></nav>
 </header>
 <div class="hero">
   <h1>FORGE YOUR <em>STRONGEST</em> SELF</h1>
   <p>Premium equipment, expert coaches and programs built for real results. Book your free orientation today.</p>
   <a class="btn" href="#contact">Book Free Orientation</a>
 </div>
-<section id="programs"><h2>Programs</h2><div class="grid" id="programList"></div></section>
-<section id="plans"><h2>Membership Plans</h2><div class="grid" id="planList"></div></section>
-<section id="trainers"><h2>Our Trainers</h2><div class="grid" id="trainerList"></div></section>
-<section id="contact">
+<section id="programs" class="reveal"><h2>Programs</h2><div class="grid" id="programList"></div></section>
+<section id="plans" class="reveal"><h2>Membership Plans</h2><div class="grid" id="planList"></div></section>
+<section id="trainers" class="reveal"><h2>Our Trainers</h2><div class="grid" id="trainerList"></div></section>
+<section id="tools" class="reveal"><h2>Fitness Tools</h2>
+  <div class="grid">
+    <form class="card" id="bmiForm"><h3>BMI &amp; Calories</h3>
+      <label for="age">Age</label><input id="age" type="number" min="12" max="90" required>
+      <label for="sex">Sex</label><select id="sex"><option value="m">Male</option><option value="f">Female</option></select>
+      <label for="ht">Height (cm)</label><input id="ht" type="number" min="100" max="230" required>
+      <label for="wt">Weight (kg)</label><input id="wt" type="number" min="30" max="250" required>
+      <label for="act">Activity</label><select id="act"><option value="1.2">Sedentary</option><option value="1.375">Light (1-3 days/wk)</option><option value="1.55" selected>Moderate (3-5 days/wk)</option><option value="1.725">Very active</option></select>
+      <label for="goal">Goal</label><select id="goal"><option value="-400">Lose fat</option><option value="0">Maintain</option><option value="300">Gain muscle</option></select>
+      <button type="submit">Calculate</button><div id="bmiOut" class="msg ok hidden"></div></form>
+    <form class="card" id="planForm"><h3>Workout Planner</h3>
+      <label for="pgoal">Goal</label><select id="pgoal"></select>
+      <label for="pdays">Days per week</label><select id="pdays"><option>3</option><option>4</option><option selected>5</option><option>6</option></select>
+      <button type="submit">Build my plan</button><ol id="planOut"></ol></form>
+  </div>
+  <p class="tag">Estimates only. Not medical advice.</p>
+</section>
+<section id="timetable" class="reveal"><h2>Class Timetable</h2><div class="tabs row" id="dayTabs"></div><div class="grid" id="dayClasses"></div></section>
+<section id="pricing" class="reveal"><h2>Membership Calculator</h2>
+  <form class="card" id="priceForm" style="max-width:520px">
+    <label for="cplan">Plan</label><select id="cplan"></select>
+    <label for="cmonths">Duration</label><select id="cmonths"><option value="1">1 month</option><option value="3">3 months (5% off)</option><option value="6">6 months (10% off)</option><option value="12">12 months (15% off)</option></select>
+    <label><input type="checkbox" id="ctrainer" style="width:auto"> Add personal trainer</label>
+    <div class="price" id="cTotal"></div><p id="cDetail" class="tag"></p></form></section>
+<section id="reviews" class="reveal"><h2>What Members Say</h2><div class="grid" id="reviewList"></div></section>
+<section id="gallery" class="reveal"><h2>Inside IRONFORGE</h2><div class="grid" id="galleryList"></div></section>
+<section id="contact" class="reveal">
   <h2>Free Orientation</h2>
   <form id="enquiryForm" novalidate>
     <label for="name">Full name</label><input id="name" required>
@@ -32,6 +58,8 @@
 </section>
 <footer>&copy; 2026 IRONFORGE &middot; Mini-project</footer>
 <script src="data.js"></script>
+<a class="wa" id="wa" target="_blank" rel="noopener">WhatsApp</a>
 <script src="app.js"></script>
+<script src="features.js"></script>
 </body>
 </html>
